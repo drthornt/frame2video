@@ -3,4 +3,5 @@ class DefaultConfig(object):
     TESTING = False
     MEMCACHE_SERVER = 'sqlite://:memory:'
     S3_BUCKET = "mybucket"
+    LISTEN = 'localhost'
     

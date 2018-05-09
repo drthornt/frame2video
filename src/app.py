@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 
-from flask import Flask, session, redirect, url_for, escape, request
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, escape
+import os
 
 app = Flask(__name__)
 
-app.secret_key = b'diab8TWkhJ8IvrOok5gzfA'
+app.config.from_object('configmodule.DefaultConfig')
+if "CONFIG_FILE" in os.environ:
+  app.config.from_envvar('CONFIG_FILE')
+
+app.secret_key = app.config['SECRET_KEY']
 
 @app.route("/")
 def hello():

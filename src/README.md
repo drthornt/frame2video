@@ -4,6 +4,9 @@
 
 take an S3 and make some videos
 
+detour: use local FS for now.
+
+
 ## User stories
 
 ### All frames
@@ -32,6 +35,8 @@ Choose what farmes are used:
 
 ## Backlog
 
+* Testing
+* Coverage measure
 * user authentication
 * contract auth
 * "mutli cloud"
@@ -45,4 +50,11 @@ Choose what farmes are used:
 * Automated inf setup
 * container it
 
+# Administration
+
+Dev startup
+ FLASK_ENV=development CONFIG_FILE="dev.cfg" flask run --host=0.0.0.0
+
+Prod startup:
+ CONFIG_FILE="prod.cfg" flask run --host=0.0.0.0
 
